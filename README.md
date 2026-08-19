@@ -8,24 +8,21 @@
 
 ## 📁 Repository Contents
 
-* `index.html` — CARNAGE Game landing page & wishlist driver
-* `presskit.html` — Dedicated media & streamer press kit
-* `styles.css` — Arcade neon styling & responsive layout
-* `script.js` — Car selector, interactive video modal & particles
-* `CNAME` — Custom domain pointer (`alltarsystems.com`)
-* `assets/` — Car plinth vectors, gameplay GIFs, and 1080p screenshots
+*  — CARNAGE Game landing page & wishlist driver
+*  — Dedicated media & streamer press kit
+*  — Arcade neon styling & responsive layout
+*  — Car selector, interactive video modal & particles
+*  — Custom domain pointer ()
+*  — Car plinth vectors, gameplay GIFs, and 1080p screenshots
 
 ---
 
 ## 🚀 GitHub Pages Deployment
 
-1. On GitHub (github.com), create a new public repository named **`alltarsystems`** (or **`alltarsystems.github.io`**).
-2. Connect and push this folder:
-   ```bash
-   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/alltarsystems.git
-   git push -u origin main
-   ```
-3. In your GitHub repo **Settings → Pages**:
-   * **Source**: `Deploy from a branch` (Branch: `main` / `/root`)
-   * **Custom domain**: `alltarsystems.com`
+1. On GitHub, create a repository named **** (or ****).
+2. Push this repo:
+   
+3. In GitHub repo **Settings → Pages**:
+   * **Source**:  (Branch:  / )
+   * **Custom domain**: 
    * Check **Enforce HTTPS**
