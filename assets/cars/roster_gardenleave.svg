@@ -1,0 +1,16 @@
+<!-- CARNAGE D-016 PART 1 · GARDEN LEAVE — source mirror of the shape inlined in
+     src/roster-shapes.js (ROSTER_SHAPES). Edit BOTH together. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="64" viewBox="0 0 88 64">
+<rect x="10" y="8" width="16" height="14" rx="3" fill="#161616"/><rect x="10" y="42" width="16" height="14" rx="3" fill="#161616"/><rect x="44" y="12" width="13" height="11" rx="3" fill="#161616"/><rect x="44" y="41" width="13" height="11" rx="3" fill="#161616"/>
+<rect x="14" y="18" width="46" height="28" rx="5" fill="#5fae2e" stroke="#28530f" stroke-width="2"/>
+<rect x="16" y="12" width="16" height="40" rx="4" fill="#3f7d1c" stroke="#28530f" stroke-width="2"/>
+<rect x="20" y="18" width="9" height="28" rx="3" fill="#28530f"/>
+<rect x="30" y="26" width="6" height="12" rx="2" fill="#161616"/>
+<rect x="36" y="20" width="4" height="24" rx="2" fill="#9aa1aa"/>
+<rect x="58" y="2" width="26" height="60" rx="4" fill="#28530f" stroke="#161616" stroke-width="2"/>
+<rect x="61" y="6" width="20" height="52" rx="3" fill="#3f7d1c"/>
+<g fill="#8f9a6a"><rect x="63" y="10" width="16" height="6"/><rect x="63" y="22" width="16" height="6"/><rect x="63" y="34" width="16" height="6"/><rect x="63" y="46" width="16" height="6"/></g>
+<circle cx="71" cy="32" r="7" fill="#c9ced6" stroke="#7d838e" stroke-width="2"/>
+<rect x="24" y="8" width="5" height="9" rx="2" fill="#161616"/>
+<rect x="8" y="27" width="6" height="10" fill="#ff5030"/>
+</svg>

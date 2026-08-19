@@ -1,0 +1,16 @@
+<!-- CARNAGE D-016 PART 1 · THE EXCESS — source mirror of the shape inlined in
+     src/roster-shapes.js (ROSTER_SHAPES). Edit BOTH together. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="145" height="64" viewBox="0 0 145 64">
+<rect x="28" y="2" width="23" height="12" rx="3" fill="#161616"/><rect x="28" y="50" width="23" height="12" rx="3" fill="#161616"/><rect x="100" y="2" width="23" height="12" rx="3" fill="#161616"/><rect x="100" y="50" width="23" height="12" rx="3" fill="#161616"/>
+<path d="M 8 10 L 126 10 Q 138 14 140 32 Q 138 50 126 54 L 8 54 Q 3 32 8 10 Z" fill="#c86a1e" stroke="#5e2e08" stroke-width="2.5"/>
+<rect x="3" y="12" width="8" height="40" rx="2" fill="#5e2e08"/>
+<rect x="12" y="15" width="62" height="34" rx="2" fill="#2a2f38" stroke="#5e2e08" stroke-width="2"/>
+<g fill="#6b7280"><rect x="17" y="19" width="24" height="10" rx="1"/><rect x="45" y="22" width="22" height="8" rx="1"/><rect x="20" y="33" width="30" height="11" rx="1"/><rect x="54" y="33" width="14" height="11" rx="1"/></g>
+<rect x="74" y="12" width="5" height="40" rx="2" fill="#c9ced6"/>
+<rect x="80" y="13" width="30" height="38" rx="3" fill="#944a11"/>
+<polygon points="80,16 90,19 90,45 80,42" fill="#8fd3e8"/>
+<polygon points="110,15 128,22 128,42 110,49" fill="#bde9f6" stroke="#5b8fa3" stroke-width="1"/>
+<rect x="82" y="29" width="46" height="6" fill="#5e2e08" opacity="0.55"/>
+<rect x="131" y="21" width="6" height="6" rx="1" fill="#fff3a1"/><rect x="131" y="37" width="6" height="6" rx="1" fill="#fff3a1"/>
+<rect x="8" y="18" width="5" height="10" fill="#ff5030"/><rect x="8" y="36" width="5" height="10" fill="#ff5030"/>
+</svg>

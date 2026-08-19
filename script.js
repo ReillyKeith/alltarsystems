@@ -6,104 +6,104 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
-     1. Interactive Garage Fleet Data & Tab Switcher
+     1. Interactive Garage Fleet Data & Tab Switcher (Direct from carnage/src/roster.js)
      ========================================================================== */
   const FLEET_DATA = {
     'beater': {
-      tier: 'TIER 1 • ENTRY LEVEL',
+      tier: 'TIER 1 • THE STARTER',
       name: 'THE BEATER',
-      perk: 'Paid Off — Junk under $1,000 pays double.',
-      lore: 'A rusty four-door saloon with mismatched doors and zero trade-in value. Built to be written off.',
+      perk: 'Paid Off. Nothing to lose.',
+      lore: 'A rusty four-door sedan with mismatched doors and zero trade-in value. Built to be written off.',
       speed: '45%',
       weight: '50%',
       handling: '60%',
       armor: '40%',
       price: 'FREE / STARTER',
-      svg: 'assets/cars/beater.svg'
+      svg: 'assets/cars/roster_beater.svg'
     },
     'fare-dodger': {
       tier: 'TIER 2 • COMMERCIAL',
       name: 'FARE DODGER',
-      perk: 'Ex-Taxi — The meter bills the city as you drive.',
+      perk: 'Ex-Taxi. The meter still runs.',
       lore: 'A retired yellow cab with a rigged fare meter that bills the city for every yard of tarmac.',
       speed: '65%',
       weight: '55%',
       handling: '70%',
       armor: '50%',
       price: '$5,000,000',
-      svg: 'assets/cars/fare.svg'
+      svg: 'assets/cars/roster_fare.svg'
     },
     'liability': {
       tier: 'TIER 2 • UNINSURABLE',
       name: 'THE LIABILITY',
-      perk: 'No Brakes — Extreme top speed, but zero brakes or reverse gear.',
+      perk: 'Brakes sold separately.',
       lore: 'An 80s wedge muscle chassis. Fast, loud, completely lethal, and legally uninsurable in 48 states.',
       speed: '95%',
-      weight: '60%',
+      weight: '50%',
       handling: '35%',
       armor: '45%',
       price: '$9,000,000',
-      svg: 'assets/cars/liability.svg'
+      svg: 'assets/cars/roster_liability.svg'
     },
     'ice-scream': {
       tier: 'TIER 3 • PUBLIC NUISANCE',
       name: 'ICE SCREAM VAN',
-      perk: 'Mister Softee — Pedestrians walk directly toward your front bumper.',
+      perk: 'The jingle draws a crowd.',
       lore: 'Plays cheerful 8-bit chimes that lure pedestrians into traffic lanes. Tall slab body reads from blocks away.',
-      speed: '50%',
+      speed: '52%',
       weight: '75%',
-      handling: '45%',
+      handling: '40%',
       armor: '65%',
       price: '$16,000,000',
-      svg: 'assets/cars/icecream.svg'
+      svg: 'assets/cars/roster_icecream.svg'
     },
     'overtaker': {
       tier: 'TIER 3 • HEAVYWEIGHT',
       name: 'THE OVERTAKER',
-      perk: 'Final Journey — 3.2 tonnes of steel that refuses to lose momentum.',
-      lore: 'A solid black vintage hearse. Roomy, inevitable, and plows through squad cars without slowing down.',
+      perk: 'A hearse. Roomy. Inevitable.',
+      lore: '3.0 tonnes of solid black steel that plows through police roadblocks without losing speed.',
       speed: '60%',
-      weight: '95%',
+      weight: '90%',
       handling: '40%',
       armor: '85%',
       price: '$30,000,000',
-      svg: 'assets/cars/overtaker.svg'
+      svg: 'assets/cars/roster_overtaker.svg'
     },
     'golden-parachute': {
       tier: 'TIER 5 • EXECUTIVE EXCESS',
       name: 'GOLDEN PARACHUTE',
-      perk: 'Bailout — Executive escape vehicle built for ramp launches.',
+      perk: 'Executive escape vehicle.',
       lore: 'A six-wheel executive stretch limousine with five side windows and high-altitude ramp launch aerodynamics.',
       speed: '85%',
-      weight: '90%',
+      weight: '85%',
       handling: '55%',
       armor: '80%',
       price: '$54,000,000',
-      svg: 'assets/cars/parachute.svg'
+      svg: 'assets/cars/roster_parachute.svg'
     },
     'litigator': {
       tier: 'TIER 5 • CORPORATE LEGAL',
       name: 'THE LITIGATOR',
-      perk: 'Sue Whomever It Hits — Every vehicle you wreck pays +60% legal settlement.',
+      perk: 'Every vehicle destroyed pays +60% settlement.',
       lore: 'A massive executive barge and the widest body on the road. Square corners, slab flanks, and chrome grille.',
       speed: '80%',
       weight: '85%',
       handling: '65%',
       armor: '75%',
       price: '$97,000,000',
-      svg: 'assets/cars/litigator.svg'
+      svg: 'assets/cars/roster_litigator.svg'
     },
     'chaser': {
       tier: 'TIER 5 • EMERGENCY SPEC',
       name: 'AMBULANCE CHASER',
-      perk: 'Follow the Money — Multiplier combo chains take twice as long to die.',
+      perk: 'Multiplier combo chains take twice as long to die.',
       lore: 'A souped-up wagon with roof rails and a scavenged emergency light bar. Chases the biggest payouts.',
       speed: '90%',
       weight: '70%',
       handling: '80%',
       armor: '65%',
       price: '$180,000,000',
-      svg: 'assets/cars/chaser.svg'
+      svg: 'assets/cars/roster_chaser.svg'
     }
   };
 
@@ -149,46 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================== */
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      faqItems.forEach(i => i.classList.remove('open'));
+    const questionBtn = item.querySelector('.faq-question');
+    if (!questionBtn) return;
+    questionBtn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
       if (!isOpen) {
-        item.classList.add('open');
+        item.classList.add('active');
       }
     });
   });
 
   /* ==========================================================================
-     3. Video Trailer Modal
-     ========================================================================== */
-  const trailerModal = document.getElementById('trailer-modal');
-  const btnWatchTrailer = document.getElementById('btn-watch-trailer');
-  const modalClose = document.getElementById('modal-close');
-  const videoEl = document.getElementById('teaser-video');
-
-  if (btnWatchTrailer && trailerModal) {
-    btnWatchTrailer.addEventListener('click', () => {
-      trailerModal.classList.add('open');
-      if (videoEl) videoEl.play();
-    });
-
-    const closeModal = () => {
-      trailerModal.classList.remove('open');
-      if (videoEl) {
-        videoEl.pause();
-        videoEl.currentTime = 0;
-      }
-    };
-
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    trailerModal.addEventListener('click', (e) => {
-      if (e.target === trailerModal) closeModal();
-    });
-  }
-
-  /* ==========================================================================
-     4. Ambient Canvas Particles (Isometric Money Pings & Debris Sparks)
+     3. Ambient Ember Particle Background Canvas
      ========================================================================== */
   const canvas = document.getElementById('ambient-canvas');
   if (canvas) {
@@ -202,64 +175,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const particles = [];
-    const NUM_PARTICLES = 30;
-    const CASH_PINGS = ['+$100', '+$1,000', '+$25,000', '+$85,000', '+$2,500,000', '+$60,000'];
+    const particleCount = Math.min(width > 768 ? 40 : 20, 50);
 
-    class Particle {
-      constructor() {
-        this.reset(true);
-      }
-
-      reset(initial = false) {
-        this.x = Math.random() * width;
-        this.y = initial ? Math.random() * height : height + 20;
-        this.vx = (Math.random() - 0.5) * 0.8;
-        this.vy = -0.5 - Math.random() * 1.2;
-        this.isText = Math.random() > 0.65;
-        this.text = CASH_PINGS[Math.floor(Math.random() * CASH_PINGS.length)];
-        this.size = this.isText ? (11 + Math.random() * 4) : (1.5 + Math.random() * 2.5);
-        this.alpha = 0.1 + Math.random() * 0.45;
-        this.color = Math.random() > 0.5 ? '#ffb800' : '#ff3344';
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.y < -30 || this.x < -30 || this.x > width + 30) {
-          this.reset();
-        }
-      }
-
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        if (this.isText) {
-          ctx.font = `700 ${this.size}px "JetBrains Mono", monospace`;
-          ctx.fillStyle = this.color;
-          ctx.fillText(this.text, this.x, this.y);
-        } else {
-          ctx.fillStyle = this.color;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        ctx.restore();
-      }
-    }
-
-    for (let i = 0; i < NUM_PARTICLES; i++) {
-      particles.push(new Particle());
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2 + 1,
+        speedY: -(Math.random() * 0.8 + 0.2),
+        speedX: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.6 + 0.2,
+        color: Math.random() > 0.5 ? '255, 184, 0' : '255, 42, 58'
       });
-      requestAnimationFrame(animate);
     }
 
-    animate();
+    function renderParticles() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(p => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+
+        if (p.y < 0) {
+          p.y = height;
+          p.x = Math.random() * width;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `rgba(${p.color}, 0.8)`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(renderParticles);
+    }
+
+    renderParticles();
   }
 });

@@ -1,0 +1,15 @@
+<!-- CARNAGE D-016 PART 1 · THE UNDERWRITER — source mirror of the shape inlined in
+     src/roster-shapes.js (ROSTER_SHAPES). Edit BOTH together. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="131" height="64" viewBox="0 0 131 64">
+<rect x="20" y="2" width="24" height="14" rx="3" fill="#161616"/><rect x="20" y="48" width="24" height="14" rx="3" fill="#161616"/><rect x="66" y="8" width="18" height="11" rx="3" fill="#161616"/><rect x="66" y="45" width="18" height="11" rx="3" fill="#161616"/>
+<rect x="4" y="12" width="18" height="40" rx="3" fill="#7d5205" stroke="#161616" stroke-width="2"/>
+<path d="M 18 14 L 86 12 Q 96 16 98 32 Q 96 48 86 52 L 18 50 Q 13 32 18 14 Z" fill="#ffb020" stroke="#7d5205" stroke-width="2"/>
+<rect x="26" y="15" width="34" height="34" rx="3" fill="#c4820e" stroke="#7d5205" stroke-width="2"/>
+<rect x="30" y="19" width="26" height="26" rx="2" fill="#8fd3e8" opacity="0.6"/>
+<rect x="60" y="20" width="24" height="24" rx="3" fill="#ffd23f" stroke="#7d5205" stroke-width="2"/>
+<rect x="84" y="27" width="34" height="10" rx="3" fill="#ffb020" stroke="#7d5205" stroke-width="2"/>
+<rect x="112" y="20" width="10" height="24" rx="2" fill="#8d949e" stroke="#7d5205" stroke-width="2"/>
+<path d="M 120 20 L 130 26 L 130 38 L 120 44 Z" fill="#c9ced6" stroke="#6d737c" stroke-width="2"/>
+<rect x="88" y="14" width="8" height="8" rx="2" fill="#ffd23f"/>
+<rect x="3" y="18" width="6" height="10" fill="#ff5030"/><rect x="3" y="36" width="6" height="10" fill="#ff5030"/>
+</svg>

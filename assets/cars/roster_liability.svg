@@ -1,0 +1,16 @@
+<!-- CARNAGE D-011 · THE LIABILITY — source mirror of the shape inlined in
+     src/roster-shapes.js (ROSTER_SHAPES). Edit BOTH together. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="64" viewBox="0 0 148 64">
+<rect x="28" y="4" width="22" height="11" rx="3" fill="#161616"/><rect x="28" y="49" width="22" height="11" rx="3" fill="#161616"/><rect x="98" y="5" width="20" height="11" rx="3" fill="#161616"/><rect x="98" y="48" width="20" height="11" rx="3" fill="#161616"/>
+<rect x="6" y="8" width="12" height="48" rx="2" fill="#7a7a7a"/>
+<rect x="8" y="4" width="10" height="56" rx="3" fill="#b0b0b0" stroke="#7a7a7a" stroke-width="2"/>
+<path d="M 16 14 L 96 10 L 140 27 L 142 32 L 140 37 L 96 54 L 16 50 Q 12 32 16 14 Z" fill="#e8e8e8" stroke="#7a7a7a" stroke-width="2"/>
+<path d="M 16 14 L 60 13 L 60 51 L 16 50 Q 12 32 16 14 Z" fill="#b0b0b0"/>
+<polygon points="46,20 58,17 58,47 46,44" fill="#8fd3e8"/>
+<polygon points="80,17 104,25 104,39 80,47" fill="#bde9f6" stroke="#5b8fa3" stroke-width="1"/>
+<rect x="60" y="16" width="20" height="32" rx="2" fill="#7a7a7a"/>
+<rect x="112" y="24" width="18" height="4" rx="1" fill="#161616"/>
+<rect x="112" y="36" width="18" height="4" rx="1" fill="#161616"/>
+<rect x="130" y="27" width="8" height="10" rx="2" fill="#fff3a1"/>
+<rect x="14" y="18" width="5" height="10" fill="#ff5030"/><rect x="14" y="36" width="5" height="10" fill="#ff5030"/>
+</svg>

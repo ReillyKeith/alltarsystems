@@ -1,26 +1,41 @@
 /* ==========================================================================
    CARNAGE & ALLTAR SYSTEMS — Master Stylesheet
+   Burnout 3: Takedown High-Octane Arcade Aesthetic (Kenyan Coffee)
    ========================================================================== */
 
+/* Local & Web Font Declarations */
+@font-face {
+  font-family: 'Kenyan Coffee';
+  src: url('assets/fonts/Kenyan Coffee Rg It.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import url('https://fonts.cdnfonts.com/css/kenyan-coffee');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap');
+
 :root {
-  --bg-primary: #09090c;
-  --bg-surface: #13141b;
-  --bg-surface-hover: #1b1d28;
-  --bg-glass: rgba(19, 20, 27, 0.75);
+  --bg-primary: #0a0a0f;
+  --bg-surface: #12131c;
+  --bg-surface-hover: #191b26;
+  --bg-card: rgba(18, 19, 28, 0.9);
+  --bg-glass: rgba(15, 16, 24, 0.85);
   
   --accent-gold: #ffb800;
-  --accent-gold-glow: rgba(255, 184, 0, 0.4);
-  --accent-red: #ff3344;
-  --accent-red-glow: rgba(255, 51, 68, 0.35);
+  --accent-gold-glow: rgba(255, 184, 0, 0.45);
+  --accent-yellow: #ffd000;
+  --accent-red: #ff2a3a;
+  --accent-red-glow: rgba(255, 42, 58, 0.4);
   --accent-steam: #66c0f4;
   --accent-steam-btn: #1999d6;
   --accent-green: #10b981;
   
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-dim: #6b7280;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
   
-  --font-display: 'Chakra Petch', sans-serif;
+  --font-display: 'Kenyan Coffee', 'Chakra Petch', 'Impact', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
@@ -29,9 +44,9 @@
   --radius-lg: 14px;
   --radius-xl: 20px;
   
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
-  --shadow-glow-red: 0 0 25px var(--accent-red-glow);
-  --shadow-glow-gold: 0 0 25px var(--accent-gold-glow);
+  --shadow-card: 0 12px 36px -10px rgba(0, 0, 0, 0.8);
+  --shadow-glow-red: 0 0 30px var(--accent-red-glow);
+  --shadow-glow-gold: 0 0 30px var(--accent-gold-glow);
 }
 
 /* Reset & Base Setup */
@@ -64,13 +79,14 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
-/* Typography Helpers */
-h1, h2, h3, h4 {
+/* Typography Helpers - Burnout 3 Slanted Arcade Style */
+h1, h2, h3, h4, .brand-logo, .badge-tag, .btn, .section-badge, .district-header, .receipt-brand, .receipt-stamp, .step-num, .garage-badge {
   font-family: var(--font-display);
-  letter-spacing: 0.03em;
+  font-style: italic;
+  letter-spacing: 0.05em;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -82,7 +98,7 @@ a {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -96,12 +112,12 @@ a {
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(9, 9, 12, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 100;
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
 .nav-container {
@@ -116,22 +132,23 @@ a {
 .brand-logo {
   display: flex;
   align-items: center;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  font-style: italic;
 }
 
 .logo-studio {
   color: var(--text-main);
-  padding: 2px 6px;
-  background: #222;
+  padding: 2px 8px;
+  background: #1e2029;
   border-radius: var(--radius-sm);
   margin-right: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo-systems {
   color: var(--accent-gold);
+  text-shadow: 0 0 12px var(--accent-gold-glow);
 }
 
 .nav-links {
@@ -141,21 +158,25 @@ a {
 }
 
 .nav-links a {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .nav-links a:hover {
   color: var(--accent-gold);
+  text-shadow: 0 0 10px var(--accent-gold-glow);
 }
 
 .nav-press {
-  padding: 4px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 184, 0, 0.35);
   border-radius: var(--radius-sm);
+  color: var(--accent-gold) !important;
+  background: rgba(255, 184, 0, 0.1);
 }
 
 /* ==========================================================================
@@ -167,12 +188,15 @@ a {
   justify-content: center;
   gap: 10px;
   font-family: var(--font-display);
+  font-style: italic;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
+  padding: 12px 24px;
   transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -181,93 +205,92 @@ a {
 }
 
 .btn-steam-small {
-  background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
-  border: 1px solid rgba(102, 192, 244, 0.4);
-  color: #c7d5e0;
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #1999d6 0%, #116897 100%);
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(25, 153, 214, 0.35);
 }
 
 .btn-steam-small:hover {
-  background: #2a475e;
-  color: #fff;
-  border-color: var(--accent-steam);
-  box-shadow: 0 0 15px rgba(102, 192, 244, 0.3);
-}
-
-.btn-steam-large {
-  background: linear-gradient(135deg, #2a475e 0%, #1b2838 100%);
-  color: #ffffff;
-  border: 2px solid var(--accent-steam);
-  padding: 16px 32px;
-  font-size: 1.1rem;
-  box-shadow: 0 0 20px rgba(102, 192, 244, 0.3);
-}
-
-.btn-steam-large:hover {
-  background: linear-gradient(135deg, #386082 0%, #22344a 100%);
-  box-shadow: 0 0 30px rgba(102, 192, 244, 0.6);
+  background: linear-gradient(135deg, #23abed 0%, #157bb3 100%);
+  box-shadow: 0 6px 20px rgba(25, 153, 214, 0.55);
   transform: translateY(-2px);
 }
 
+.btn-steam-large {
+  background: linear-gradient(135deg, #1999d6 0%, #0d547b 100%);
+  color: #fff;
+  padding: 16px 36px;
+  font-size: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 25px rgba(25, 153, 214, 0.45);
+  border: 1px solid rgba(102, 192, 244, 0.4);
+}
+
+.btn-steam-large:hover {
+  background: linear-gradient(135deg, #2bb7fc 0%, #157cb4 100%);
+  box-shadow: 0 10px 30px rgba(25, 153, 214, 0.65);
+  transform: translateY(-3px);
+}
+
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-main);
   padding: 16px 28px;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
 }
 
 /* ==========================================================================
    Hero Section
    ========================================================================== */
 .hero-section {
-  position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 70px 24px 90px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 60px 24px 80px;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+  position: relative;
   z-index: 1;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .badge-tag {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 1rem;
   color: var(--accent-gold);
-  background: rgba(255, 184, 0, 0.1);
-  border: 1px solid rgba(255, 184, 0, 0.3);
-  padding: 6px 12px;
+  background: rgba(255, 184, 0, 0.12);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
   margin-bottom: 20px;
-  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(255, 184, 0, 0.15);
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  line-height: 0.95;
-  margin-bottom: 12px;
+  font-size: clamp(4.5rem, 10vw, 7.5rem);
+  line-height: 0.9;
+  margin-bottom: 14px;
   letter-spacing: 0.04em;
+  font-style: italic;
 }
 
 .title-carnage {
-  background: linear-gradient(180deg, #ffffff 20%, #ff3344 100%);
+  background: linear-gradient(180deg, #ffffff 15%, #ff2a3a 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 35px var(--accent-red-glow));
@@ -275,25 +298,28 @@ a {
 
 .hero-tagline {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-style: italic;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent-gold);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   margin-bottom: 18px;
+  text-shadow: 0 0 15px var(--accent-gold-glow);
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 32px;
+  max-width: 600px;
 }
 
 .highlight-punch {
   display: block;
   margin-top: 8px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero-actions {
@@ -306,395 +332,477 @@ a {
 .hero-platforms {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.85rem;
+  gap: 10px;
+  font-size: 0.9rem;
   color: var(--text-dim);
+  flex-wrap: wrap;
 }
 
 .platform-chip {
   background: var(--bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
   border-radius: var(--radius-sm);
-  color: var(--text-muted);
-  font-weight: 500;
+  color: var(--text-main);
+  font-weight: 600;
 }
 
-/* Hero Receipt Card */
-.hero-receipt-wrap {
-  flex: 0 0 380px;
+/* Hero Media & Receipt Stack */
+.hero-media-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   perspective: 1000px;
 }
 
+.hero-gif-card {
+  position: relative;
+  background: #000;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 184, 0, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 42, 58, 0.25);
+}
+
+.hero-gif-img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.hero-gif-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(10, 10, 15, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+/* Receipt Hologram */
 .receipt-card {
-  background: #fdfbf7;
+  background: #fcfaf5;
   color: #1a1a1a;
   font-family: var(--font-mono);
-  padding: 28px 24px;
+  padding: 24px 22px;
   border-radius: var(--radius-sm);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px var(--accent-red-glow);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
   position: relative;
-  transform: rotate(2.5deg);
-  transition: transform 0.3s ease;
   border: 1px dashed #d1d5db;
+  transform: rotate(1.5deg);
+  transition: transform 0.3s ease;
 }
 
 .receipt-card:hover {
-  transform: rotate(0deg) scale(1.02);
+  transform: rotate(0deg) scale(1.01);
 }
 
 .receipt-header {
   text-align: center;
   border-bottom: 2px dashed #9ca3af;
-  padding-bottom: 14px;
-  margin-bottom: 16px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .receipt-brand {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-size: 1.45rem;
+  color: #111;
 }
 
 .receipt-sub {
-  font-size: 0.75rem;
-  color: #6b7280;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
 }
 
 .receipt-body {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .receipt-line {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .receipt-line.highlight {
-  font-weight: 700;
+  font-weight: 800;
   color: #b91c1c;
 }
 
 .receipt-divider {
   border-bottom: 2px solid #1a1a1a;
-  margin: 14px 0 10px;
+  margin: 12px 0 8px;
 }
 
 .receipt-line.total {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #000;
 }
 
 .receipt-stamp {
   position: absolute;
-  bottom: 25px;
+  bottom: 20px;
   right: 15px;
   border: 3px solid #b91c1c;
   color: #b91c1c;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.45rem;
   padding: 4px 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transform: rotate(-12deg);
+  transform: rotate(-10deg);
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 10px rgba(185, 28, 28, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 12px rgba(185, 28, 28, 0.25);
 }
 
 /* ==========================================================================
    Section Global Headers
    ========================================================================== */
 .section {
-  padding: 100px 0;
+  padding: 85px 0;
   position: relative;
   z-index: 1;
 }
 
 .section-badge {
-  font-family: var(--font-mono);
   color: var(--accent-gold);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
   margin-bottom: 8px;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1;
   margin-bottom: 14px;
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  max-width: 650px;
-  margin-bottom: 48px;
-}
-
-/* ==========================================================================
-   Pillars Grid
-   ========================================================================== */
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.pillar-card {
-  background: var(--bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 32px 28px;
-  border-radius: var(--radius-lg);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.pillar-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 184, 0, 0.3);
-  background: var(--bg-surface-hover);
-}
-
-.pillar-icon {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
-}
-
-.pillar-card h3 {
   font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.pillar-card p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  max-width: 720px;
+  margin-bottom: 48px;
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   Garage / Fleet Section
+   3-Step Game Loop Section
    ========================================================================== */
-.garage-showcase {
-  background: var(--bg-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-xl);
-  padding: 32px;
-  box-shadow: var(--shadow-card);
-}
-
-.car-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 20px;
-  margin-bottom: 32px;
-}
-
-.car-tab {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--text-muted);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 10px 18px;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.car-tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.car-tab.active {
-  background: var(--accent-gold);
-  color: #000;
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 15px var(--accent-gold-glow);
-}
-
-.car-display {
+.loop-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.loop-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.loop-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.step-num {
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.loop-card h3 {
+  font-size: 1.55rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.loop-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Pillars Grid (With Gameplay GIFs)
+   ========================================================================== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.pillar-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 184, 0, 0.4);
+  background: var(--bg-surface-hover);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 184, 0, 0.15);
+}
+
+.pillar-media {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  aspect-ratio: 16 / 10;
+}
+
+.pillar-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pillar-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.pillar-card p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Garage Showcase (Screenshot-First)
+   ========================================================================== */
+.garage-feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  box-shadow: var(--shadow-card);
   align-items: center;
 }
 
-.car-tier {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent-gold);
-  margin-bottom: 6px;
+.garage-feature-media {
+  position: relative;
+  background: #000;
+  height: 100%;
+  min-height: 380px;
 }
 
-.car-name {
+.garage-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.garage-media-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(10, 10, 15, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.garage-feature-details {
+  padding: 40px 36px;
+}
+
+.garage-badge {
+  color: var(--accent-gold);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.garage-feature-details h3 {
   font-size: 2.2rem;
   color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  line-height: 1.1;
 }
 
-.car-perk {
-  font-size: 1.05rem;
-  color: var(--accent-gold);
-  margin-bottom: 12px;
-}
-
-.car-lore {
+.garage-feature-details p {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-.car-stats {
+.fleet-highlights {
+  list-style: none;
   margin-bottom: 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.stat-row {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.stat-bar {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.stat-fill {
-  height: 100%;
-  background: var(--accent-gold);
-  border-radius: 4px;
-  transition: width 0.4s ease;
-}
-
-.stat-fill.stat-armor {
-  background: var(--accent-red);
-}
-
-.car-price-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
+.fleet-highlights li {
   font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
 }
 
-.car-price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #10b981;
+.fleet-highlights li::before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-gold);
 }
 
-.car-visual {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 280px;
-  background: radial-gradient(circle at center, rgba(255, 184, 0, 0.08) 0%, transparent 70%);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.fleet-highlights strong {
+  color: #fff;
 }
 
-.car-model-svg {
-  width: 240px;
-  height: 120px;
-  object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85));
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  transform: rotate(-10deg) scale(1.1);
-}
-
-.car-model-svg:hover {
-  transform: rotate(0deg) scale(1.25);
-}
-
-.car-shadow {
-  width: 200px;
-  height: 22px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  filter: blur(10px);
-  margin-top: -15px;
+.fleet-highlights em {
+  color: var(--accent-yellow);
 }
 
 /* ==========================================================================
-   Districts / Campaign
+   Districts / Campaign Section (With Gameplay GIFs)
    ========================================================================== */
 .districts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
 }
 
 .district-card {
-  background: var(--bg-surface);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  padding: 30px 24px;
-  position: relative;
   overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.district-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 42, 58, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 42, 58, 0.15);
+}
+
+.district-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.district-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.district-content {
+  padding: 24px;
 }
 
 .district-header {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent-gold);
-  margin-bottom: 12px;
+  color: var(--accent-red);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
 }
 
 .district-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.9rem;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  line-height: 1.1;
 }
 
 .district-card p {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .district-card.locked {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(18, 19, 28, 0.6);
   border-style: dashed;
 }
 
-.district-card.locked .district-header {
-  color: var(--accent-steam);
+.locked-preview {
+  position: relative;
+}
+
+.blur-bg {
+  filter: blur(4px) brightness(0.4);
+}
+
+.locked-overlay-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 20px;
+}
+
+.locked-icon {
+  font-size: 2.2rem;
+}
+
+.locked-overlay-text h4 {
+  font-size: 1.4rem;
+  color: var(--accent-gold);
 }
 
 /* ==========================================================================
    FAQ Section
    ========================================================================== */
 .faq-accordion {
-  max-width: 800px;
+  max-width: 840px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
 .faq-item {
-  background: var(--bg-surface);
+  background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -702,148 +810,67 @@ a {
 
 .faq-question {
   width: 100%;
+  padding: 20px 24px;
   text-align: left;
   background: none;
   border: none;
   color: #fff;
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  padding: 20px 24px;
+  font-style: italic;
+  font-size: 1.45rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: color 0.2s ease;
 }
 
-.faq-question::after {
-  content: '+';
-  font-size: 1.4rem;
+.faq-question:hover {
   color: var(--accent-gold);
-  transition: transform 0.2s ease;
-}
-
-.faq-item.open .faq-question::after {
-  content: '−';
-  color: var(--accent-red);
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 24px;
+  padding: 0 24px 20px;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.faq-item.open .faq-answer {
-  max-height: 200px;
-  padding-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 /* ==========================================================================
    CTA Banner
    ========================================================================== */
 .cta-banner {
-  padding: 60px 0 100px;
+  padding: 80px 0 100px;
 }
 
 .cta-box {
-  background: linear-gradient(135deg, #1b1d28 0%, #10121a 100%);
-  border: 2px solid rgba(255, 184, 0, 0.3);
+  background: linear-gradient(135deg, rgba(255, 42, 58, 0.15) 0%, rgba(255, 184, 0, 0.15) 100%);
+  border: 1px solid rgba(255, 184, 0, 0.4);
   border-radius: var(--radius-xl);
   padding: 60px 40px;
   text-align: center;
-  box-shadow: var(--shadow-card), 0 0 40px var(--accent-red-glow);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px var(--accent-red-glow);
 }
 
 .cta-box h2 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-bottom: 14px;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  margin-bottom: 16px;
 }
 
 .cta-box p {
   color: var(--text-muted);
-  font-size: 1.1rem;
-  max-width: 500px;
-  margin: 0 auto 32px;
-}
-
-/* ==========================================================================
-   Trailer Modal
-   ========================================================================== */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.modal-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 960px;
-  background: #000;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
-
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  font-size: 1.25rem;
+  max-width: 620px;
+  margin: 0 auto 36px;
 }
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 .site-footer {
-  background: #060608;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #07070a;
   padding: 60px 0 40px;
-  color: var(--text-dim);
-  font-size: 0.9rem;
 }
 
 .footer-content {
@@ -852,25 +879,42 @@ a {
   gap: 40px;
 }
 
+.footer-brand .brand-logo {
+  margin-bottom: 12px;
+}
+
 .footer-tagline {
   color: var(--text-muted);
-  margin: 12px 0 16px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.footer-legal {
+  color: var(--text-dim);
+  font-size: 0.85rem;
 }
 
 .footer-links h4, .footer-contact h4 {
+  font-size: 1.35rem;
   color: #fff;
-  font-size: 0.95rem;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .footer-links a {
   display: block;
   color: var(--text-muted);
   margin-bottom: 8px;
+  font-size: 1rem;
 }
 
 .footer-links a:hover {
   color: var(--accent-gold);
+}
+
+.footer-contact p {
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-size: 1rem;
 }
 
 .footer-contact a {
@@ -881,57 +925,30 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
   margin-top: 12px;
-  font-size: 0.8rem;
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background: #10b981;
   border-radius: 50%;
-  box-shadow: 0 0 8px #10b981;
+  background: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green);
 }
 
-/* ==========================================================================
-   Responsive Breakpoints
-   ========================================================================== */
-@media (max-width: 900px) {
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
   .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-platforms {
-    justify-content: center;
-  }
-
-  .car-display {
+  .garage-feature-card {
     grid-template-columns: 1fr;
   }
-
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 640px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero-receipt-wrap {
-    flex: 1;
-    width: 100%;
-  }
-
-  .receipt-card {
-    transform: none;
   }
 }
