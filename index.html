@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARNAGE — Isometric Crash-for-Cash Arcade Driving | Alltar Systems</title>
+  <meta name="description" content="Chaotic isometric crash-for-cash driving. Smash fast, trigger slow-mo Crash Mode, aftertouch your burning wreck into the city's most expensive real estate, and get the itemised invoice.">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alltarsystems.com/">
+  <meta property="og:title" content="CARNAGE — Isometric Crash-for-Cash Driving">
+  <meta property="og:description" content="Drive fast, crash big, aftertouch your burning chassis into Mutual Assurance HQ, and get the itemised invoice. Wishlist on Steam now!">
+  <meta property="og:image" content="assets/alltar_systems_fire_logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-studio">ALLTAR</span><span class="logo-systems">SYSTEMS</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#garage">The Garage</a>
+        <a href="#districts">Districts</a>
+        <a href="#faq">FAQ</a>
+        <a href="presskit.html" class="nav-press">Press Kit</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-small">
+          <svg class="steam-icon" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
+          </svg>
+          Wishlist on Steam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="badge-tag">Burnout Crash Mode × Retro Isometric Arcade</div>
+        <h1 class="hero-title">
+          <span class="title-carnage">CARNAGE</span>
+        </h1>
+        <p class="hero-tagline">ONE-CAR INSURANCE APOCALYPSE</p>
+        <p class="hero-subtitle">
+          Drive fast, smash hard, trigger slow-mo <strong>Crash Mode</strong>, and aftertouch your burning wreck into the city's most expensive real estate. 
+          <span class="highlight-punch">The joke is always the price tag.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-large">
+            <svg class="steam-icon-large" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
+            </svg>
+            <span>WISHLIST ON STEAM</span>
+          </a>
+          <button class="btn btn-secondary" id="btn-watch-trailer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Watch Teaser
+          </button>
+        </div>
+
+        <div class="hero-platforms">
+          <span>Target Platforms:</span>
+          <span class="platform-chip">Windows PC</span>
+          <span class="platform-chip">Steam Deck Verified</span>
+          <span class="platform-chip">macOS (Metal)</span>
+        </div>
+      </div>
+
+      <!-- Receipt Hologram Widget -->
+      <div class="hero-receipt-wrap">
+        <div class="receipt-card">
+          <div class="receipt-header">
+            <div class="receipt-brand">MUTUAL ASSURANCE CORP</div>
+            <div class="receipt-sub">CLAIMS ADJUSTMENT INVOICE #8942-X</div>
+          </div>
+          <div class="receipt-body">
+            <div class="receipt-line"><span>Fire Hydrant × 6</span><span>$600</span></div>
+            <div class="receipt-line"><span>Police Cruiser Interceptor</span><span>$85,000</span></div>
+            <div class="receipt-line"><span>Armored Bank Van</span><span>$150,000</span></div>
+            <div class="receipt-line"><span>Art Gallery Billboard</span><span>$45,000</span></div>
+            <div class="receipt-line highlight"><span>Mutual Assurance HQ Atrium</span><span>$2,500,000</span></div>
+            <div class="receipt-divider"></div>
+            <div class="receipt-line total"><span>TOTAL CLAIMED:</span><span>$2,780,600</span></div>
+          </div>
+          <div class="receipt-stamp">INSURER LIQUIDATED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gameplay Pillars Section -->
+    <section class="section pillars-section" id="pillars">
+      <div class="container">
+        <div class="section-badge">CORE GAMEPLAY</div>
+        <h2 class="section-title">BUILT FOR MAXIMUM DAMAGE</h2>
+        <p class="section-subtitle">A high-velocity physics sandbox where every collision sends flying debris, multiplier combo chains, and mounting repair bills.</p>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">💥</div>
+            <h3>THE CRASH IS THE FINALE</h3>
+            <p>Impact at high speed to trigger slow-mo <strong>Crash Mode</strong>. Steer your burning chassis through traffic jams with direct aftertouch steering.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🏷️</div>
+            <h3>EVERYTHING HAS A PRICE TAG</h3>
+            <p>From $100 hydrants and $60k fuel tankers to the $2.5M Mutual Assurance glass lobby, every destruction event generates an instant cash bill.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🚨</div>
+            <h3>THE CITY OVERREACTS</h3>
+            <p>Rack up damages and watch the police escalate. Ram squad cars to build your 5-Star Wanted rating. Ambulances rush in — wiping them out doubles dispatch.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🛡️</div>
+            <h3>MULTI-HIT CRASH ARMOR</h3>
+            <p>Cars withstand 3 to 8 hits before total detonation. Lose bumpers, buckle hoods, and maintain top speed until your final explosive impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Garage Section -->
+    <section class="section garage-section" id="garage">
+      <div class="container">
+        <div class="section-badge">THE FLEET</div>
+        <h2 class="section-title">THE GARAGE IS THE PROGRESSION</h2>
+        <p class="section-subtitle">Every approved insurance payout funds your garage expansion. 24 satirical vehicles across 5 tiers of corporate excess.</p>
+
+        <div class="garage-showcase">
+          <!-- Car Tab Selector -->
+          <div class="car-nav" id="car-tabs">
+            <button class="car-tab active" data-car="beater">THE BEATER</button>
+            <button class="car-tab" data-car="fare-dodger">FARE DODGER</button>
+            <button class="car-tab" data-car="liability">THE LIABILITY</button>
+            <button class="car-tab" data-car="ice-scream">ICE SCREAM VAN</button>
+            <button class="car-tab" data-car="overtaker">THE OVERTAKER</button>
+            <button class="car-tab" data-car="golden-parachute">GOLDEN PARACHUTE</button>
+            <button class="car-tab" data-car="litigator">THE LITIGATOR</button>
+            <button class="car-tab" data-car="chaser">AMBULANCE CHASER</button>
+          </div>
+
+          <!-- Car Display Card -->
+          <div class="car-display" id="car-display-panel">
+            <div class="car-info">
+              <div class="car-tier" id="car-tier">TIER 1 • ENTRY LEVEL</div>
+              <h3 class="car-name" id="car-name">THE BEATER</h3>
+              <p class="car-perk" id="car-perk"><strong>Perk:</strong> <em>Paid Off — Junk under $1,000 pays double.</em></p>
+              <p class="car-lore" id="car-lore">A rusty four-door sedan with mismatched doors and zero trade-in value. Built to be written off.</p>
+
+              <div class="car-stats">
+                <div class="stat-row">
+                  <span>SPEED</span>
+                  <div class="stat-bar"><div class="stat-fill" id="stat-speed" style="width: 45%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>WEIGHT</span>
+                  <div class="stat-bar"><div class="stat-fill" id="stat-weight" style="width: 50%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>HANDLING</span>
+                  <div class="stat-bar"><div class="stat-fill" id="stat-handling" style="width: 60%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>CRASH ARMOR</span>
+                  <div class="stat-bar"><div class="stat-fill stat-armor" id="stat-armor" style="width: 40%;"></div></div>
+                </div>
+              </div>
+
+              <div class="car-price-row">
+                <span>PRICE:</span>
+                <span class="car-price" id="car-price">FREE / STARTER</span>
+              </div>
+            </div>
+
+            <div class="car-visual">
+              <img id="car-sprite-img" src="assets/cars/beater.svg" alt="Vehicle Silhouette" class="car-model-svg">
+              <div class="car-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Districts / Levels -->
+    <section class="section districts-section" id="districts">
+      <div class="container">
+        <div class="section-badge">CAMPAIGN</div>
+        <h2 class="section-title">EIGHT CHAOTIC DISTRICTS</h2>
+        <p class="section-subtitle">Master distinct road topologies, environmental hazards, and multi-million dollar jackpot landmarks.</p>
+
+        <div class="districts-grid">
+          <div class="district-card">
+            <div class="district-header">DISTRICT 01</div>
+            <h3>DOWNTOWN</h3>
+            <p>Congested multi-lane avenues, pedestrian plazas, and the iconic glass atrium of <strong>Mutual Assurance HQ</strong> ($2.5M Jackpot).</p>
+          </div>
+
+          <div class="district-card">
+            <div class="district-header">DISTRICT 02</div>
+            <h3>THE COAST</h3>
+            <p>Cliffside hairpins, seaside promenade, smashable deckchairs, and high-flying pier ramp jumps.</p>
+          </div>
+
+          <div class="district-card">
+            <div class="district-header">DISTRICT 03</div>
+            <h3>THE COUNTRYSIDE</h3>
+            <p>Narrow winding rural lanes, combustible hay bales, roaming livestock, and the explosive <strong>Barn Inferno</strong>.</p>
+          </div>
+
+          <div class="district-card locked">
+            <div class="district-header">PLUS 5 MORE IN FULL CAMPAIGN</div>
+            <h3>AIRPORT • FROZEN LAKE • RETAIL PARK • PORT • CASINO STRIP</h3>
+            <p>Runway drag strips, brittle ice physics, shopping trolley fields, and neon-lit casino fountains.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-badge">DETAILS</div>
+        <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question">When will CARNAGE release on Steam?</button>
+            <div class="faq-answer">
+              <p>CARNAGE is launching in 2026. You can wishlist the game on Steam right now to be notified the second it releases and catch the launch discount!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Will CARNAGE support controllers and the Steam Deck?</button>
+            <div class="faq-answer">
+              <p>Yes! CARNAGE features full gamepad support (Xbox, PlayStation, DualSense) with analog steering and impact rumble, and is engineered to be Steam Deck Verified on Day 1.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Will there be a playable demo?</button>
+            <div class="faq-answer">
+              <p>Yes. A free playable demo featuring the Downtown district and starter fleet will be released for Steam Next Fest.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Who is building CARNAGE?</button>
+            <div class="faq-answer">
+              <p>CARNAGE is designed and developed by indie studio <strong>Alltar Systems</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wishlist Banner CTA -->
+    <section class="section cta-banner">
+      <div class="container">
+        <div class="cta-box">
+          <h2>READY TO LIQUIDATE THE INSURERS?</h2>
+          <p>Add CARNAGE to your Steam Wishlist today to get notified on release and demo drops.</p>
+          <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-large">
+            <svg class="steam-icon-large" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
+            </svg>
+            <span>WISHLIST ON STEAM NOW</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Video Trailer Modal -->
+  <div class="modal-overlay" id="trailer-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div class="video-container">
+        <video id="teaser-video" controls poster="../assets/icon_red.jpg">
+          <source src="../assets/alltar_systems_fire_intro.mp4" type="video/mp4">
+          <source src="assets/alltar_systems_fire_intro.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <span class="logo-studio">ALLTAR</span><span class="logo-systems">SYSTEMS</span>
+        </div>
+        <p class="footer-tagline">Independent game development & arcade physics simulation.</p>
+        <p class="footer-legal">© 2026 Alltar Systems. CARNAGE is a registered trademark.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="#about">About</a>
+        <a href="#garage">The Fleet</a>
+        <a href="#districts">Districts</a>
+        <a href="presskit.html">Press Kit</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact & Support</h4>
+        <p>Support: <a href="mailto:support@alltarsystems.com">support@alltarsystems.com</a></p>
+        <p>Press & Business: <a href="mailto:contact@alltarsystems.com">contact@alltarsystems.com</a></p>
+        <p class="status-indicator"><span class="status-dot"></span> Steam Store Page In Review</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
