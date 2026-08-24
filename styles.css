@@ -137,6 +137,17 @@ a {
   font-style: italic;
 }
 
+.brand-logo-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  margin-right: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  box-shadow: 0 0 10px rgba(255, 184, 0, 0.25);
+  display: block;
+}
+
 .logo-studio {
   color: var(--text-main);
   padding: 2px 8px;
