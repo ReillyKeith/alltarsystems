@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Alltar Systems — Independent Game Studio | Ireland</title>
+  <meta name="description" content="Alltar Systems is an independent game studio based in Ireland creating silly, high-velocity, fun arcade games inspired by the golden era of the late 90s and early 2000s.">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alltarsystems.com/about.html">
+  <meta property="og:title" content="About Alltar Systems — Indie Arcade Game Development in Ireland">
+  <meta property="og:description" content="Making silly, nostalgic, high-velocity destruction games inspired by the late 90s and early 2000s.">
+  <meta property="og:image" content="assets/screenshots/steam_shot_01_downtown_smash.png">
+  
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-container {
+      max-width: 1040px;
+      margin: 50px auto 100px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-hero {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .about-title {
+      font-size: 3.8rem;
+      line-height: 1.05;
+      margin: 16px 0;
+      color: #fff;
+      text-shadow: 0 0 30px rgba(255, 184, 0, 0.3);
+    }
+
+    .about-tagline {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--accent-gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(12px);
+    }
+
+    .about-card h2 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+
+    .about-card p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .retro-callout {
+      background: linear-gradient(135deg, rgba(255, 184, 0, 0.12), rgba(255, 42, 58, 0.08));
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 24px;
+      margin: 30px 0;
+    }
+
+    .retro-callout h3 {
+      font-size: 1.4rem;
+      color: var(--accent-yellow);
+      margin-bottom: 10px;
+    }
+
+    .retro-callout p {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .value-box {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .value-box:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+    }
+
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .value-box h4 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .value-box p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-card h4 {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .contact-card a {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .about-title { font-size: 2.6rem; }
+      .about-card { padding: 24px; }
+      .about-card h2 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-studio">ALLTAR</span><span class="logo-systems">SYSTEMS</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#districts">6 Maps</a>
+        <a href="index.html#garage">The Fleet</a>
+        <a href="index.html#demo">Playable Demo</a>
+        <a href="about.html" style="color: var(--accent-gold); text-shadow: 0 0 10px var(--accent-gold-glow);">About</a>
+        <a href="presskit.html" class="nav-press">Press Kit</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-small">
+          <svg class="steam-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
+          </svg>
+          Wishlist on Steam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="about-container">
+    <div class="about-hero">
+      <div class="badge-tag">STUDIO ORIGINS • DUBLIN, IRELAND</div>
+      <h1 class="about-title">MAKING SILLY, FAST & FUN GAMES</h1>
+      <p class="about-tagline">INSPIRED BY THE LATE 90s & EARLY 2000s ARCADE GOLDEN ERA</p>
+    </div>
+
+    <!-- The Story -->
+    <article class="about-card">
+      <h2><span>🇮🇪</span> THE INDIE STORY</h2>
+      <p>
+        Hi, I'm Keith — the solo developer behind <strong>Alltar Systems</strong>, based in Ireland.
+      </p>
+      <p>
+        I grew up playing games during the golden era of arcade and console gaming in the late 1990s and early 2000s. It was a magical time when games didn't take themselves too seriously — they were loud, fast, unapologetically silly, and built around immediate, addictive gameplay loops.
+      </p>
+      <p>
+        Remember the unhinged joy of <strong>Burnout's Crash Mode</strong>, the top-down mayhem of <strong>classic GTA 1 & 2</strong>, the crunch of <strong>Destruction Derby</strong>, and the pure kinetic energy of <strong>Crazy Taxi</strong>? That spirit is what drives everything we build at Alltar Systems.
+      </p>
+
+      <div class="retro-callout">
+        <h3>🔥 THE ALLTAR CREED</h3>
+        <p>
+          "No 40-minute unskippable tutorials. No Battle Passes. No microtransactions. Just hit SPACE, floor the throttle, crash into Mutual Assurance HQ, and laugh at the itemised invoice."
+        </p>
+      </div>
+
+      <p>
+        <strong>CARNAGE</strong> was born from a simple question: <em>What if the crash wasn't the failure state, but the entire point of the game?</em> Every lamppost, police cruiser, tractor, superyacht, and glass atrium has a real-time dollar tag attached to it. Your job is simple: cause the biggest insurance catastrophe in municipal history and bill the adjusters for every cent.
+      </p>
+    </article>
+
+    <!-- Core Philosophy Grid -->
+    <section class="about-card">
+      <h2><span>⚡</span> OUR CORE PRINCIPLES</h2>
+      <p>Every design decision in our games is guided by three straightforward rules:</p>
+
+      <div class="values-grid">
+        <div class="value-box">
+          <div class="value-icon">⏱️</div>
+          <h4>BOOT-TO-PLAY IN 2 SECONDS</h4>
+          <p>You bought a game to play it. Press Space anywhere in the menus and you're instantly in a round. Zero friction, zero fluff.</p>
+        </div>
+
+        <div class="value-box">
+          <div class="value-icon">💥</div>
+          <h4>PHYSICS & CHAOS FIRST</h4>
+          <p>Real-time mass calculations, slow-motion aftertouch steering, secondary chain explosions, and responsive impact shockwaves.</p>
+        </div>
+
+        <div class="value-box">
+          <div class="value-icon">🎸</div>
+          <h4>90s / 2000s ATTITUDE</h4>
+          <p>Pounding punk-rock guitar riffs, high-contrast arcade neons, cheeky insurance satire, and honest, fair-priced indie gaming ($3.99 – $4.99).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Playable Demo Info -->
+    <section class="about-card">
+      <h2><span>🎮</span> TRY THE FREE DEMO</h2>
+      <p>
+        We believe in letting players try the game first. A free standalone playable demo featuring <strong>MAP 01: DOWNTOWN</strong> and the starter missile <strong>THE BEATER</strong> is available to download.
+      </p>
+      <p>
+        You can play the demo on <strong>Steam</strong> and download standalone DRM-free builds (Windows <code>.exe</code> and macOS <code>.dmg</code>) on <strong>itch.io</strong>.
+      </p>
+      <div style="display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap;">
+        <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-small">
+          Steam Store Page
+        </a>
+        <a href="https://alltarsystems.itch.io/carnage" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color: #fa5c5c; color: #fff;">
+          👾 itch.io Page
+        </a>
+        <a href="presskit.html" class="btn btn-secondary">
+          Press & Creator Kit
+        </a>
+      </div>
+    </section>
+
+    <!-- Studio Contact -->
+    <section class="about-card">
+      <h2><span>📬</span> GET IN TOUCH</h2>
+      <p>Whether you're a player with feedback, a content creator wanting review keys, or a fellow indie dev saying hello — we'd love to hear from you!</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>Player Support</h4>
+          <a href="mailto:support@alltarsystems.com">support@alltarsystems.com</a>
+        </div>
+        <div class="contact-card">
+          <h4>Press & Business</h4>
+          <a href="mailto:contact@alltarsystems.com">contact@alltarsystems.com</a>
+        </div>
+        <div class="contact-card">
+          <h4>Studio Location</h4>
+          <span style="color: #fff; font-weight: 600;">Dublin, Ireland 🇮🇪</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <span class="logo-studio">ALLTAR</span><span class="logo-systems">SYSTEMS</span>
+        </div>
+        <p class="footer-tagline">Independent game development & arcade physics simulation from Ireland.</p>
+        <p class="footer-legal">© 2026 Alltar Systems. CARNAGE is a registered trademark.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#districts">6 Active Maps</a>
+        <a href="index.html#garage">The Fleet</a>
+        <a href="about.html">About Studio</a>
+        <a href="presskit.html">Press Kit</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact & Support</h4>
+        <p>Support: <a href="mailto:support@alltarsystems.com">support@alltarsystems.com</a></p>
+        <p>Press & Inquiries: <a href="mailto:contact@alltarsystems.com">contact@alltarsystems.com</a></p>
+        <p class="status-indicator"><span class="status-dot"></span> Steam Store Page In Review</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
