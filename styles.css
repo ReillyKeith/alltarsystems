@@ -248,6 +248,29 @@ a {
   transform: translateY(-3px);
 }
 
+.btn-trailer {
+  background: linear-gradient(135deg, #e63946 0%, #b3121f 100%);
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 1.4rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.45);
+  border: 1px solid rgba(255, 107, 107, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-trailer:hover {
+  background: linear-gradient(135deg, #ff4757 0%, #c01422 100%);
+  box-shadow: 0 10px 30px rgba(255, 42, 58, 0.7);
+  transform: translateY(-3px);
+}
+
+.btn-trailer svg {
+  flex-shrink: 0;
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -387,6 +410,61 @@ a {
   letter-spacing: 0.05em;
 }
 
+.hero-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero-gif-card:hover .hero-play-overlay {
+  opacity: 1;
+}
+
+.hero-play-btn-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 42, 58, 0.92);
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 42, 58, 0.85);
+  transform: scale(0.92);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-play-btn-circle svg {
+  margin-left: 4px;
+  fill: #fff;
+}
+
+.hero-gif-card:hover .hero-play-btn-circle {
+  transform: scale(1.08);
+}
+
+.hero-play-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: #fff;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  background: rgba(10, 10, 15, 0.88);
+  padding: 5px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
 /* Receipt Hologram */
 .receipt-card {
   background: #fcfaf5;
@@ -462,6 +540,108 @@ a {
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 12px rgba(185, 28, 28, 0.25);
+}
+
+/* ==========================================================================
+   Official Gameplay Trailer Section
+   ========================================================================== */
+.trailer-section {
+  padding: 85px 0;
+  background: linear-gradient(180deg, rgba(10, 10, 15, 0.8) 0%, rgba(26, 12, 18, 0.95) 50%, rgba(10, 10, 15, 0.85) 100%);
+  border-top: 1px solid rgba(255, 42, 58, 0.3);
+  border-bottom: 1px solid rgba(255, 42, 58, 0.3);
+  position: relative;
+}
+
+.trailer-container {
+  max-width: 1080px;
+  margin: 36px auto 0;
+}
+
+.trailer-frame {
+  position: relative;
+  background: #000;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(255, 42, 58, 0.45);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 42, 58, 0.3);
+}
+
+.trailer-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(14, 15, 22, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.trailer-rec-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.rec-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 10px var(--accent-red);
+  animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.rec-text {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.trailer-duration {
+  color: var(--accent-gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.trailer-video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  outline: none;
+}
+
+.trailer-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.trailer-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.trailer-pill {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
 }
 
 /* ==========================================================================

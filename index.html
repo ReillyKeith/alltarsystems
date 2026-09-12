@@ -32,6 +32,7 @@
       </a>
 
       <nav class="nav-links">
+        <a href="#trailer">Trailer</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#districts">6 Maps</a>
         <a href="#garage">The Fleet</a>
@@ -41,7 +42,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-small">
+        <a href="https://store.steampowered.com/app/5117390/CARNAGE/" target="_blank" rel="noopener" class="btn btn-steam-small">
           <svg class="steam-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
             <path d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
           </svg>
@@ -66,11 +67,17 @@
         </p>
 
         <div class="hero-actions">
-          <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-large">
+          <a href="https://store.steampowered.com/app/5117390/CARNAGE/" target="_blank" rel="noopener" class="btn btn-steam-large">
             <svg class="steam-icon-large" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
               <path d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
             </svg>
             <span>WISHLIST ON STEAM</span>
+          </a>
+          <a href="#trailer" class="btn btn-trailer">
+            <svg class="play-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>WATCH TRAILER</span>
           </a>
           <a href="#demo" class="btn btn-secondary" style="border-color: var(--accent-gold); color: var(--accent-gold);">
             🎮 Play Free Demo
@@ -91,6 +98,14 @@
         <div class="hero-gif-card">
           <div class="hero-gif-badge">🔥 LIVE GAMEPLAY • 60 FPS ARCADE</div>
           <img src="assets/gifs/downtown_breaking_glass.gif" alt="Downtown Mutual Assurance Smash" class="hero-gif-img">
+          <a href="#trailer" class="hero-play-overlay" aria-label="Watch Full Trailer">
+            <div class="hero-play-btn-circle">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <polygon points="6 4 20 12 6 20 6 4"/>
+              </svg>
+            </div>
+            <span class="hero-play-label">WATCH TRAILER (1:20)</span>
+          </a>
         </div>
 
         <!-- Receipt Hologram Widget -->
@@ -109,6 +124,45 @@
             <div class="receipt-line total"><span>TOTAL CLAIMED:</span><span>$2,780,600</span></div>
           </div>
           <div class="receipt-stamp">CLAIM DENIED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Official Gameplay Trailer Section -->
+    <section class="section trailer-section" id="trailer">
+      <div class="container">
+        <div class="section-badge">OFFICIAL GAMEPLAY TRAILER</div>
+        <h2 class="section-title">WATCH THE CARNAGE IN ACTION</h2>
+        <p class="section-subtitle">Floor the throttle, trigger slow-mo Crash Mode, and steer your burning wreck into Mutual Assurance HQ.</p>
+
+        <div class="trailer-container">
+          <div class="trailer-frame">
+            <div class="trailer-top-bar">
+              <div class="trailer-rec-indicator">
+                <span class="rec-dot"></span>
+                <span class="rec-text">REC • 60 FPS 1080P ARCADE CAPTURE</span>
+              </div>
+              <div class="trailer-duration">01:20</div>
+            </div>
+            <video id="main-trailer" class="trailer-video" controls preload="metadata" poster="assets/trailer_poster.jpg" playsinline>
+              <source src="assets/videos/carnage_trailer.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="trailer-footer-bar">
+            <div class="trailer-feature-pills">
+              <span class="trailer-pill">💥 Dynamic Destruction</span>
+              <span class="trailer-pill">⏱ Slow-Mo Aftertouch</span>
+              <span class="trailer-pill">🧾 Itemised Claims</span>
+              <span class="trailer-pill">🏙 6 Districts</span>
+            </div>
+            <div class="trailer-cta">
+              <a href="https://store.steampowered.com/app/5117390/CARNAGE/" target="_blank" rel="noopener" class="btn btn-steam-small">
+                Wishlist on Steam
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -168,7 +222,7 @@
             </ul>
 
             <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
-              <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-small">
+              <a href="https://store.steampowered.com/app/5117390/CARNAGE/" target="_blank" rel="noopener" class="btn btn-steam-small">
                 Play Demo on Steam
               </a>
               <a href="https://alltarsystems.itch.io/carnage" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color: #fa5c5c; color: #fff;">
@@ -240,7 +294,7 @@
             </ul>
 
             <div class="garage-cta-row">
-              <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-small">
+              <a href="https://store.steampowered.com/app/5117390/CARNAGE/" target="_blank" rel="noopener" class="btn btn-steam-small">
                 Unlock Full Fleet on Steam
               </a>
             </div>
@@ -390,7 +444,7 @@
           <h2>READY TO WRECK?</h2>
           <p>Add CARNAGE to your Steam Wishlist or grab the free demo to start crashing.</p>
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://store.steampowered.com/app/1288244" target="_blank" rel="noopener" class="btn btn-steam-large">
+            <a href="https://store.steampowered.com/app/5117390/CARNAGE/" target="_blank" rel="noopener" class="btn btn-steam-large">
               <svg class="steam-icon-large" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
                 <path d="M12 2a10 10 0 0 0-10 10c0 4.7 3.2 8.6 7.6 9.7l2.8-4.1c-.2-.5-.3-1-.3-1.6 0-.3 0-.6.1-.9L8 12.8A3.6 3.6 0 0 1 8 12a3.8 3.8 0 0 1 3.8-3.8c2.1 0 3.8 1.7 3.8 3.8 0 .5-.1 1-.3 1.5l3.9 2.7c.3-.1.6-.2 1-.2 1.9 0 3.5 1.6 3.5 3.5 0 1.9-1.6 3.5-3.5 3.5a3.5 3.5 0 0 1-3.5-3.5v-.3L10.7 17a4.9 4.9 0 0 1-2.9 1 5 5 0 0 1-5-5 5 5 0 0 1 5-5c2.6 0 4.8 2 5 4.6l3.5-2.4c.1-.4.2-.7.4-1.1a5.9 5.9 0 0 1 5.8-4.1 6 6 0 0 1 6 6c0 3.2-2.5 5.8-5.6 6l-2.4 3.5A10 10 0 0 0 12 2z"/>
               </svg>
@@ -418,6 +472,7 @@
 
       <div class="footer-links">
         <h4>Navigation</h4>
+        <a href="#trailer">Official Trailer</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#districts">6 Maps</a>
         <a href="#garage">The Fleet</a>

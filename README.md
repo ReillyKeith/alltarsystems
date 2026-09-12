@@ -2,7 +2,8 @@
 
 > **Live Website**: [https://alltarsystems.com](https://alltarsystems.com)  
 > **Studio**: Alltar Systems  
-> **Game**: CARNAGE (Steam App ID: 1288244)  
+> **Game**: CARNAGE (Steam App ID: 5117390)  
+> **Steam Store**: [https://store.steampowered.com/app/5117390/CARNAGE/](https://store.steampowered.com/app/5117390/CARNAGE/)  
 
 ---
 

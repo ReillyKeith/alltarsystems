@@ -214,4 +214,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderParticles();
   }
+
+  /* ==========================================================================
+     4. Trailer Autoplay on Trigger Click
+     ========================================================================== */
+  const trailerVideo = document.getElementById('main-trailer');
+  const trailerTriggers = document.querySelectorAll('a[href="#trailer"]');
+
+  trailerTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      if (trailerVideo) {
+        setTimeout(() => {
+          trailerVideo.play().catch(() => {
+            // Browser may require direct control interaction
+          });
+        }, 300);
+      }
+    });
+  });
 });
